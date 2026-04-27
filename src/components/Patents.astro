@@ -1,0 +1,114 @@
+---
+const patents = [
+  {
+    number: 'US 10,614,076',
+    title: 'Modification of ground truth tables based on real-time user interaction',
+    category: 'AI / Machine Learning',
+  },
+  {
+    number: 'US 10,231,079',
+    title: 'Geo-fence management using a cluster analysis technique',
+    category: 'Location Intelligence',
+  },
+  {
+    number: 'US 9,571,968',
+    title: 'Geo-fence management using a cluster analysis technique',
+    category: 'Location Intelligence',
+  },
+  {
+    number: 'US 5,261,115',
+    title: 'Multi-board system with shift board selection',
+    category: 'Hardware Systems',
+  },
+];
+
+const applications = [
+  { number: '20040210541', title: 'User interface for a rules engine and methods therefore' },
+  { number: '20120259675', title: 'System and Method for a Retail Collaboration Network Platform' },
+];
+---
+
+<div class="patents-strip">
+  <div class="patents-left">
+    <div class="patents-count">4</div>
+    <div class="patents-word">Issued patents</div>
+  </div>
+
+  <div class="patents-grid">
+    {patents.map(p => (
+      <a
+        href={`https://patents.justia.com/patent/${p.number.replace(/[^0-9]/g, '')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="patent-item"
+      >
+        <div class="patent-num">{p.number}</div>
+        <div class="patent-title">{p.title}</div>
+        <div class="patent-type">{p.category}</div>
+      </a>
+    ))}
+  </div>
+
+  <div class="patents-cta">
+    <a
+      href="https://louisroehrs.com/patents/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-secondary"
+    >
+      View all →
+    </a>
+  </div>
+</div>
+
+<style>
+  .patents-strip {
+    background: var(--surface-card);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 56px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .patents-left { flex-shrink: 0; }
+  .patents-count {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .patents-word {
+    font-size: 14px;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+  .patents-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .patent-item {
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.15s;
+  }
+  .patent-item:hover { border-color: var(--border-mid); }
+  .patent-num   { font-size: 10px; color: var(--ink-muted); letter-spacing: 0.5px; margin-bottom: 4px; }
+  .patent-title { font-size: 13px; color: var(--ink); font-weight: 500; line-height: 1.4; }
+  .patent-type  { font-size: 10px; color: var(--navy-light); margin-top: 5px; }
+  .patents-cta  { flex-shrink: 0; align-self: center; }
+
+  @media (max-width: 900px) {
+    .patents-strip { flex-direction: column; padding: 40px 24px; }
+    .patents-grid  { grid-template-columns: 1fr; }
+  }
+</style>

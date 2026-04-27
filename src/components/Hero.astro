@@ -1,0 +1,166 @@
+---
+const HEADSHOT = 'https://media.licdn.com/dms/image/v2/D5603AQHj6aIHE45IcQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1683128840744?e=1778716800&v=beta&t=fNY_WLce5zWLG-369V4EyVk0YTs9bzK7_z2UFL5CWyE';
+---
+
+<div class="hero">
+  <div class="hero-left">
+    <p class="eyebrow">Mountain View, CA &nbsp;·&nbsp; AI Builder &nbsp;·&nbsp; Speaker &nbsp;·&nbsp; Founder</p>
+    <h1 class="hero-h1">
+      Engineering the<br />
+      <em>future</em> of human–AI<br />
+      collaboration
+    </h1>
+    <p class="hero-bio">
+      Two decades building award-winning AI products at IBM — now helping businesses
+      scale smarter through <strong>TeleTrex</strong> and hands-on AI training.
+    </p>
+    <div class="hero-btns">
+      <a href="#portfolio" class="btn-primary">See my work</a>
+      <a href="/speaking" class="btn-secondary">Book a speaking engagement</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-row">
+      <img src={HEADSHOT} alt="Louis Roehrs" class="headshot" />
+      <div>
+        <div class="photo-name">Louis Roehrs</div>
+        <div class="photo-title">Software Engineer &amp; AI Innovation Catalyst</div>
+      </div>
+    </div>
+
+    <div class="badge-row">
+      <span class="badge badge-blue">IBM Watson</span>
+      <span class="badge badge-amber">DAA Award 2016</span>
+      <span class="badge badge-blue">IBM Think Speaker</span>
+      <span class="badge badge-green">TeleTrex Founder</span>
+      <span class="badge badge-blue">AI-Powered Search</span>
+      <span class="badge badge-green">USA Today Featured</span>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Issued patents</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Papers published</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2016</div>
+        <div class="stat-label">DAA Award winner</div>
+      </div>
+    </div>
+
+    <div class="press-quote">
+      <blockquote>"Watson app helps you find trendy gifts"</blockquote>
+      <cite>— USA Today, December 2015 &nbsp;·&nbsp; Also covered in BurnTech &amp; inPublishing</cite>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+    background: var(--surface-card);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-left {
+    padding: 72px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+  .hero-left > * {
+    animation: fadeUp 0.55s ease both;
+  }
+  .hero-left .eyebrow   { animation-delay: 0.05s; }
+  .hero-left .hero-h1   { animation-delay: 0.12s; }
+  .hero-left .hero-bio  { animation-delay: 0.19s; }
+  .hero-left .hero-btns { animation-delay: 0.26s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-h1 {
+    font-family: var(--font-serif);
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 22px;
+    letter-spacing: -0.5px;
+  }
+  .hero-h1 em { font-style: italic; color: var(--navy-light); }
+
+  .hero-bio {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    margin-bottom: 36px;
+    max-width: 420px;
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-right {
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .photo-row { display: flex; align-items: center; gap: 20px; }
+  .headshot {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid var(--border-mid);
+    flex-shrink: 0;
+  }
+  .photo-name  { font-size: 16px; font-weight: 500; color: var(--ink); }
+  .photo-title { font-size: 13px; color: var(--ink-muted); margin-top: 2px; }
+
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat {
+    background: var(--surface);
+    border-radius: 10px;
+    padding: 16px 12px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .stat-num   { font-size: 28px; font-weight: 500; color: var(--ink); line-height: 1; }
+  .stat-label { font-size: 11px; color: var(--ink-muted); margin-top: 5px; line-height: 1.3; }
+
+  .press-quote {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+  }
+  .press-quote blockquote {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .press-quote cite { font-size: 11px; color: var(--ink-muted); font-style: normal; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-right { padding: 40px 24px; }
+  }
+</style>

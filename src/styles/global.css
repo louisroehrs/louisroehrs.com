@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:       #0F2E4A;
+  --navy-light: #185FA5;
+  --navy-pale:  #E6F1FB;
+  --navy-mid:   #B5D4F4;
+  --accent:     #378ADD;
+  --ink:        #1A1A1A;
+  --ink-mid:    #4A4A4A;
+  --ink-muted:  #7A7A7A;
+  --surface:    #F8F7F4;
+  --surface-card: #FFFFFF;
+  --border:     rgba(0,0,0,0.09);
+  --border-mid: rgba(0,0,0,0.14);
+  --green-bg:   #EAF3DE;
+  --green-text: #3B6D11;
+  --amber-bg:   #FAEEDA;
+  --amber-text: #854F0B;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans:  'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--surface);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── UTILITIES ── */
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+.eyebrow-accent { color: var(--accent); }
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+.section-sub {
+  font-size: 15px;
+  color: var(--ink-mid);
+  margin-top: 8px;
+  max-width: 600px;
+  line-height: 1.7;
+}
+.section-header { margin-bottom: 40px; }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  background: var(--navy);
+  color: #E6F1FB;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  padding: 11px 24px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.88; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  padding: 11px 24px;
+  border-radius: 24px;
+  border: 1px solid var(--border-mid);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s;
+}
+.btn-secondary:hover { background: var(--surface); }
+
+.btn-accent {
+  background: var(--accent);
+  color: #042C53;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  padding: 12px 26px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  transition: opacity 0.15s;
+}
+.btn-accent:hover { opacity: 0.88; }
+
+.btn-ghost {
+  background: transparent;
+  color: #E6F1FB;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  padding: 12px 26px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color 0.15s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.45); }
+
+/* ── BADGES / TAGS ── */
+.badge {
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.badge-blue  { background: var(--navy-pale); color: var(--navy-light); }
+.badge-green { background: var(--green-bg);  color: var(--green-text); }
+.badge-amber { background: var(--amber-bg);  color: var(--amber-text); }
+
+.tag {
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  display: inline-block;
+}
+.tag-blue  { background: var(--navy-pale); color: var(--navy-light); }
+.tag-green { background: var(--green-bg);  color: var(--green-text); }
+.tag-amber { background: var(--amber-bg);  color: var(--amber-text); }
+.tag-neutral { background: var(--surface); color: var(--ink-muted); border: 1px solid var(--border); }
+
+/* ── CARDS ── */
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.card:hover { border-color: var(--border-mid); transform: translateY(-2px); }
+
+/* ── PANELS ── */
+.panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.panel-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.panel-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.panel-footer a {
+  font-size: 13px;
+  color: var(--navy-light);
+  text-decoration: none;
+  font-weight: 500;
+}
+.panel-footer a:hover { text-decoration: underline; }
+
+.list-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.list-item:last-child { border-bottom: none; }
+.list-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.list-item-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+.list-item-sub   { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+
+/* ── SECTIONS ── */
+.section { padding: 64px 56px; border-bottom: 1px solid var(--border); }
+.section.on-white   { background: var(--surface-card); }
+.section.on-surface { background: var(--surface); }
+
+/* ── TELETREX BANNER ── */
+.teletrex-banner {
+  background: var(--navy);
+  padding: 28px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.teletrex-label {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.teletrex-headline { font-size: 20px; font-weight: 500; color: #E6F1FB; margin-bottom: 6px; }
+.teletrex-desc     { font-size: 13px; color: var(--navy-mid); line-height: 1.6; max-width: 480px; }
+
+/* ── FOOTER ── */
+.site-footer {
+  background: var(--navy);
+  padding: 32px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-logo { font-family: var(--font-serif); font-size: 18px; color: #E6F1FB; }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 12px; color: var(--navy-mid); text-decoration: none; transition: color 0.15s; }
+.footer-links a:hover { color: #E6F1FB; }
+.footer-copy { font-size: 12px; color: var(--navy-mid); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .section { padding: 48px 24px; }
+  .teletrex-banner { padding: 24px; flex-direction: column; align-items: flex-start; }
+  .site-footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+}

@@ -1,0 +1,301 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+
+const HEADSHOT = 'https://media.licdn.com/dms/image/v2/D5603AQHj6aIHE45IcQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1683128840744?e=1778716800&v=beta&t=fNY_WLce5zWLG-369V4EyVk0YTs9bzK7_z2UFL5CWyE';
+
+const topics = [
+  {
+    icon: '🔍',
+    title: 'AI-Powered Search',
+    desc: 'How cognitive AI transforms information retrieval — from keyword matching to intent understanding, relevance ranking, and enterprise knowledge discovery. The talk that anchored multiple IBM Think sessions.',
+    formats: ['Keynote', '45–60 min', 'Technical or business'],
+  },
+  {
+    icon: '🤝',
+    title: 'Human–AI Collaboration',
+    desc: 'AI doesn\'t replace your best people — it amplifies them. Drawing on lessons from Watson and TeleTrex, this talk explores what real human–AI partnership looks like at the product and organizational level.',
+    formats: ['Keynote / Panel', '30–60 min', 'Leadership audiences'],
+  },
+  {
+    icon: '⚡',
+    title: 'Scaling Businesses with Practical AI',
+    desc: 'Most businesses don\'t need a team of ML engineers — they need leverage. This talk covers the real-world playbook for deploying AI that reduces cost, accelerates response, and doesn\'t require a PhD to maintain.',
+    formats: ['Keynote / Workshop', '45–90 min', 'SMB and enterprise'],
+  },
+  {
+    icon: '🏗️',
+    title: 'Lessons from Building Watson',
+    desc: 'A candid account of what it takes to build award-winning AI products inside a large enterprise — what worked, what failed, and what startup founders and product teams can learn from the Watson era.',
+    formats: ['Fireside chat', '30–45 min', 'Product / founders'],
+  },
+  {
+    icon: '🖥️',
+    title: 'GPU Computing for the Modern Web',
+    desc: 'The browser is a supercomputer most developers ignore. This technical talk explores WebGL, GPU-driven visualization, and what becomes possible when you move computation off the CPU — with live demos.',
+    formats: ['Technical keynote', '45 min', 'Engineering audiences'],
+  },
+  {
+    icon: '🧭',
+    title: 'Cutting Through the AI Hype',
+    desc: 'A grounded, pragmatic guide to evaluating AI claims, choosing vendors wisely, and building internal AI capability that lasts — designed for executives and leaders navigating a noisy market.',
+    formats: ['Executive briefing', '30–45 min', 'C-suite / board'],
+  },
+];
+---
+
+<Layout
+  title="Speaking — Louis Roehrs"
+  description="Louis Roehrs is an IBM Think conference speaker on AI-Powered Search and enterprise AI. Available for keynotes, panels, and corporate events."
+  activePage="Speaking"
+>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="hero-left">
+      <div class="eyebrow eyebrow-accent">Speaking</div>
+      <h1>Making AI <em>make sense</em> from the stage</h1>
+      <p class="hero-sub">
+        Louis brings two decades of hands-on AI product experience to every talk — from building
+        IBM Watson Trend to founding TeleTrex. No hype, no hand-waving. Just clear, practical
+        insight on where AI is going and how to use it now.
+      </p>
+      <div class="hero-btns">
+        <a href="https://calendly.com/roehrs-ai/30min" target="_blank" rel="noopener noreferrer" class="btn-accent">
+          Inquire about booking ↗
+        </a>
+        <a href="#topics" class="btn-ghost">View topics</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="speaker-card">
+        <img src={HEADSHOT} alt="Louis Roehrs" class="headshot" />
+        <div>
+          <div class="speaker-name">Louis Roehrs</div>
+          <div class="speaker-title">Software Engineer &amp; AI Innovation Catalyst<br />Founder, TeleTrex · Mountain View, CA</div>
+          <a href="https://linkedin.com/in/louisroehrs" target="_blank" rel="noopener noreferrer" class="speaker-linkedin">
+            linkedin.com/in/louisroehrs ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">IBM</div><div class="hero-stat-label">Think Conference</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Years in tech</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Issued patents</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAST ENGAGEMENTS -->
+  <section class="section on-white">
+    <div class="section-header">
+      <div class="eyebrow">Past engagements</div>
+      <h2 class="section-title">On the record</h2>
+      <p class="section-sub">A practitioner's perspective on AI — delivered at some of the industry's most important stages.</p>
+    </div>
+    <div class="engagements-grid">
+      <div class="engagement-card">
+        <div class="engagement-top">
+          <div>
+            <div class="engagement-event">IBM Think Conference</div>
+            <div class="engagement-title">AI-Powered Search: How Cognitive AI Transforms Enterprise Knowledge Discovery</div>
+          </div>
+          <span class="tag tag-amber">Keynote</span>
+        </div>
+        <div class="engagement-body">
+          <p>Multiple sessions at IBM's flagship annual conference exploring how AI moves search beyond keyword matching — understanding intent, ranking by relevance, and surfacing knowledge that traditional search buries. Delivered to technical architects, enterprise decision-makers, and practitioners building on IBM's AI platform.</p>
+          <div class="engagement-meta">
+            <span>IBM Think</span>
+            <span>AI / Enterprise Search</span>
+            <span>Technical &amp; business audiences</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="engagement-card">
+        <div class="engagement-top">
+          <div>
+            <div class="engagement-event">Digital Analytics Association · 2016</div>
+            <div class="engagement-title">IBM Watson Trend — Technology of the Year</div>
+          </div>
+          <span class="tag tag-amber">Award recognition</span>
+        </div>
+        <div class="engagement-body">
+          <p>IBM Watson Trend, built by Louis's incubator team at IBM, received the DAA Excellence Award for Technology of the Year — recognized alongside Adobe and other top-tier innovators for its application of NLP and machine learning to consumer trend forecasting.</p>
+          <div class="engagement-meta">
+            <span>Digital Analytics Association</span>
+            <span>AI / Consumer Intelligence</span>
+            <span>Industry award gala</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section id="topics" class="section on-surface">
+    <div class="section-header">
+      <div class="eyebrow">Topics</div>
+      <h2 class="section-title">What Louis speaks about</h2>
+      <p class="section-sub">Each talk is tailored to the audience — technical depth for engineering teams, strategic clarity for business leaders.</p>
+    </div>
+    <div class="topics-grid">
+      {topics.map(t => (
+        <div class="topic-card">
+          <div class="topic-icon">{t.icon}</div>
+          <div class="topic-title">{t.title}</div>
+          <div class="topic-desc">{t.desc}</div>
+          <div class="topic-formats">
+            {t.formats.map(f => <span class="tag tag-neutral">{f}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section on-white">
+    <div class="booking-cta">
+      <div>
+        <h3>Book Louis for your next event</h3>
+        <p>Available for conferences, corporate keynotes, panels, fireside chats, and private executive briefings. Louis tailors every session to the audience — no recycled slide decks. Start with a 30-minute intro call to discuss your event, audience, and goals.</p>
+      </div>
+      <div class="booking-actions">
+        <a href="https://calendly.com/roehrs-ai/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Schedule intro call ↗
+        </a>
+        <a href="https://linkedin.com/in/louisroehrs" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          Connect on LinkedIn
+        </a>
+        <div class="booking-note">Free 30-min call · No commitment</div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* HERO */
+  .page-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--navy);
+    padding: 80px 56px 72px;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero-left { color: #E6F1FB; }
+  .hero-left h1 {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    font-weight: 700;
+    color: #F0F6FC;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin: 16px 0 20px;
+  }
+  .hero-left h1 em { font-style: italic; color: var(--navy-mid); }
+  .hero-sub { font-size: 16px; color: var(--navy-mid); line-height: 1.75; margin-bottom: 32px; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-right { display: flex; flex-direction: column; gap: 16px; }
+  .speaker-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .headshot {
+    width: 88px; height: 88px; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    border: 2px solid rgba(255,255,255,0.2);
+    flex-shrink: 0;
+  }
+  .speaker-name  { font-size: 18px; font-weight: 500; color: #E6F1FB; }
+  .speaker-title { font-size: 13px; color: var(--navy-mid); margin-top: 4px; line-height: 1.5; }
+  .speaker-linkedin {
+    font-size: 12px; color: var(--accent);
+    text-decoration: none; margin-top: 8px; display: inline-block;
+  }
+  .speaker-linkedin:hover { text-decoration: underline; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .hero-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px; padding: 16px 12px; text-align: center;
+  }
+  .hero-stat-num   { font-size: 26px; font-weight: 500; color: #E6F1FB; }
+  .hero-stat-label { font-size: 11px; color: var(--navy-mid); margin-top: 4px; }
+
+  /* ENGAGEMENTS */
+  .engagements-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .engagement-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .engagement-card:hover { border-color: var(--border-mid); transform: translateY(-2px); }
+  .engagement-top {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 16px;
+  }
+  .engagement-event {
+    font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+  }
+  .engagement-title { font-size: 17px; font-weight: 500; color: var(--ink); line-height: 1.35; }
+  .engagement-body { padding: 16px 24px; }
+  .engagement-body p { font-size: 13px; color: var(--ink-mid); line-height: 1.65; margin-bottom: 12px; }
+  .engagement-meta {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    font-size: 11px; color: var(--ink-muted);
+  }
+  .engagement-meta span::before { content: '· '; }
+  .engagement-meta span:first-child::before { content: ''; }
+
+  /* TOPICS */
+  .topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .topic-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px;
+  }
+  .topic-icon  { font-size: 22px; margin-bottom: 12px; }
+  .topic-title { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .topic-desc  { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+  .topic-formats { margin-top: 16px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+  /* BOOKING */
+  .booking-cta {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 40px; align-items: center;
+  }
+  .booking-cta h3 {
+    font-family: var(--font-serif);
+    font-size: 26px; font-weight: 700;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .booking-cta p { font-size: 14px; color: var(--ink-mid); line-height: 1.7; }
+  .booking-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; flex-shrink: 0; }
+  .booking-note { font-size: 12px; color: var(--ink-muted); text-align: right; margin-top: 4px; }
+
+  @media (max-width: 900px) {
+    .page-hero    { grid-template-columns: 1fr; padding: 48px 24px; }
+    .engagements-grid { grid-template-columns: 1fr; }
+    .topics-grid  { grid-template-columns: 1fr; }
+    .booking-cta  { grid-template-columns: 1fr; }
+    .booking-actions { align-items: flex-start; }
+  }
+</style>

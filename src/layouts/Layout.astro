@@ -1,0 +1,150 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  activePage?: string;
+}
+
+const {
+  title,
+  description = 'Software engineer and AI innovator. Founder of TeleTrex. IBM Think speaker. Helping businesses scale with practical AI.',
+  activePage = '',
+} = Astro.props;
+
+const navLinks = [
+  { href: '/#portfolio', label: 'Portfolio' },
+  { href: '/speaking',   label: 'Speaking' },
+  { href: '/training',   label: 'AI Training' },
+  { href: 'https://teletrex.com', label: 'TeleTrex', external: true },
+  { href: 'https://louisroehrs.com/patents/', label: 'Patents', external: true },
+  { href: '/#contact',   label: 'Contact' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/" class="nav-logo">Louis Roehrs</a>
+  <ul class="nav-links">
+    {navLinks.map(link => (
+      <li>
+        <a
+          href={link.href}
+          class:list={[{ active: activePage === link.label }]}
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noopener noreferrer' : undefined}
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <a
+    href="https://calendly.com/roehrs-ai/30min"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="nav-cta"
+  >
+    Book a call ↗
+  </a>
+</nav>
+
+<main>
+  <slot />
+</main>
+
+<!-- TELETREX BANNER -->
+<div class="teletrex-banner">
+  <div>
+    <div class="teletrex-label">Venture &nbsp;·&nbsp; teletrex.com</div>
+    <div class="teletrex-headline">TeleTrex — AI that scales businesses without scaling overhead</div>
+    <div class="teletrex-desc">Practical AI assistants trained on how you talk to customers. Faster answers, fewer dropped balls, a lighter load on your team — built in Mountain View, CA.</div>
+  </div>
+  <a href="https://teletrex.com" target="_blank" rel="noopener noreferrer" class="btn-accent">
+    Visit TeleTrex ↗
+  </a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo">Louis Roehrs</div>
+  <ul class="footer-links">
+    <li><a href="/#portfolio">Portfolio</a></li>
+    <li><a href="/speaking">Speaking</a></li>
+    <li><a href="/training">AI Training</a></li>
+    <li><a href="https://teletrex.com" target="_blank" rel="noopener noreferrer">TeleTrex</a></li>
+    <li><a href="https://louisroehrs.com/patents/" target="_blank" rel="noopener noreferrer">Patents</a></li>
+    <li><a href="https://linkedin.com/in/louisroehrs" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+  </ul>
+  <div class="footer-copy">© {new Date().getFullYear()} Louis Roehrs · Mountain View, CA</div>
+</footer>
+
+</body>
+</html>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--ink-mid);
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--ink); }
+  .nav-cta {
+    background: var(--navy);
+    color: #E6F1FB;
+    font-size: 13px;
+    font-family: var(--font-sans);
+    padding: 9px 20px;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.15s;
+  }
+  .nav-cta:hover { opacity: 0.88; }
+
+  @media (max-width: 900px) {
+    .site-nav { padding: 0 24px; }
+    .nav-links { display: none; }
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+interface Props {
+  headline?: string;
+  headlineEm?: string;
+  body?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+}
+
+const {
+  headline = "Let's build something",
+  headlineEm = "remarkable",
+  body = "Whether you need a speaker, an AI training partner, or want to explore what TeleTrex can do for your business — start with a conversation.",
+  primaryLabel = "Book a free call ↗",
+  primaryHref = "https://calendly.com/roehrs-ai/30min",
+} = Astro.props;
+---
+
+<section id="contact" class="contact-cta">
+  <h2>{headline} <em>{headlineEm}</em></h2>
+  <p>{body}</p>
+  <div class="cta-row">
+    <a href={primaryHref} target="_blank" rel="noopener noreferrer" class="btn-primary">
+      {primaryLabel}
+    </a>
+    <a href="https://teletrex.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+      Explore TeleTrex
+    </a>
+    <a href="https://louisroehrs.com/papers-references/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+      Read my papers
+    </a>
+  </div>
+</section>
+
+<style>
+  .contact-cta {
+    background: var(--surface-card);
+    padding: 80px 56px;
+    text-align: center;
+    border-bottom: none;
+  }
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+  h2 em { font-style: italic; color: var(--navy-light); }
+  p {
+    font-size: 16px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 36px;
+  }
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    .contact-cta { padding: 56px 24px; }
+  }
+</style>

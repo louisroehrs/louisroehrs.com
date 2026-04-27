@@ -1,0 +1,112 @@
+---
+const projects = [
+  {
+    tag: 'DAA Award winner',
+    tagType: 'amber',
+    title: 'IBM Watson Trend',
+    desc: 'Consumer AI app using NLP and machine learning to analyze millions of social conversations and forecast holiday product trends. Won the Digital Analytics Association Technology of the Year Award (2016). Featured in USA Today, BurnTech, and inPublishing.',
+    link: null,
+  },
+  {
+    tag: 'AI / NLP',
+    tagType: 'blue',
+    title: 'Watson for Marketing Practitioners',
+    desc: 'IBM Incubator project enabling marketing teams to tackle data problems at scale using Watson\'s cognitive capabilities — helping practitioners accomplish analysis that wasn\'t possible with existing staffing levels.',
+    link: null,
+  },
+  {
+    tag: 'IBM Think · Speaker',
+    tagType: 'blue',
+    title: 'AI-Powered Search',
+    desc: 'Featured speaker at IBM Think conferences on how cognitive AI transforms enterprise information retrieval, relevance ranking, and knowledge discovery. Delivered multiple sessions to technical and business audiences.',
+    link: '/speaking',
+    linkLabel: 'Speaking details →',
+  },
+  {
+    tag: 'WebGL · GPU',
+    tagType: 'green',
+    title: 'GPU-Powered Mandelbrot Set',
+    desc: 'Real-time interactive Mandelbrot renderer running on your GPU via WebGL. A live fractal explorer — not a movie — built to push browser-native graphics to their limits.',
+    link: 'https://louisroehrs.com/blog/2017/07/16/using-your-gpu-to-display-the-mandlebrot-set/',
+    linkLabel: 'View live demo →',
+    external: true,
+  },
+  {
+    tag: 'WebGL · GPU',
+    tagType: 'green',
+    title: 'Digital Lava Lamp',
+    desc: 'GPU-driven trigonometric simulation producing a mesmerizing lava lamp effect in the browser using WebGL shaders. Real-time graphics computation accessible from any modern browser.',
+    link: 'https://louisroehrs.com/blog/2017/07/23/using-your-gpu-to-make-a-lava-lamp/',
+    linkLabel: 'View live demo →',
+    external: true,
+  },
+  {
+    tag: 'Python · 3D printing',
+    tagType: 'blue',
+    title: '3D Models with Turtle Graphics',
+    desc: 'Generate printable 3D models using LOGO-inspired Python turtle graphics and svg-turtle — where creative coding meets physical fabrication. A new take on a 60-year-old programming paradigm.',
+    link: 'https://louisroehrs.com/blog/2023/05/05/make-3d-print-models-with-python-turtle-graphics-svg-turtle/',
+    linkLabel: 'Read more →',
+    external: true,
+  },
+];
+---
+
+<section id="portfolio" class="section on-white">
+  <div class="section-header">
+    <div class="eyebrow">Work</div>
+    <h2 class="section-title">Portfolio projects</h2>
+    <p class="section-sub">Products, experiments, and research spanning AI, GPU computing, and creative engineering.</p>
+  </div>
+
+  <div class="portfolio-grid">
+    {projects.map(p => (
+      <div class="card">
+        <span class={`tag tag-${p.tagType}`}>{p.tag}</span>
+        <div class="card-title">{p.title}</div>
+        <div class="card-desc">{p.desc}</div>
+        {p.link && (
+          <a
+            href={p.link}
+            class="card-link"
+            target={p.external ? '_blank' : undefined}
+            rel={p.external ? 'noopener noreferrer' : undefined}
+          >
+            {p.linkLabel}
+          </a>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 12px 0 8px;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+  .card-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--navy-light);
+    text-decoration: none;
+  }
+  .card-link:hover { text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+  }
+</style>
