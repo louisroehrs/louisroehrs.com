@@ -43,6 +43,24 @@ body {
 }
 .eyebrow-accent { color: var(--accent); }
 
+.two-columns {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+  
+.left-column {
+}
+
+.right-column {
+  display:flex;
+  justify-content: end;
+}
+
+.speaker-img {
+  width: 300px;
+}
+
 .section-title {
   font-family: var(--font-serif);
   font-size: 32px;

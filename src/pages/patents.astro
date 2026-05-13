@@ -1,0 +1,314 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const patents = [
+  {
+    number: 'US 10,614,076',
+    title: 'Modification of Ground Truth Tables Based on Real-Time User Interaction',
+    category: 'AI / Machine Learning',
+    tag: 'Granted',
+    description: 'Enables AI systems to continuously learn and adapt from user interactions, improving accuracy and reducing training time for enterprise applications.',
+    justiaId: '10614076',
+  },
+  {
+    number: 'US 10,231,079',
+    title: 'Geo-Fence Management Using a Cluster Analysis Technique',
+    category: 'Location Intelligence',
+    tag: 'Granted',
+    description: 'Advanced location intelligence leveraging sophisticated cluster analysis for precise geo-fence targeting and location-based enterprise services.',
+    justiaId: '10231079',
+  },
+  {
+    number: 'US 9,571,968',
+    title: 'Geo-Fence Management Using a Cluster Analysis Technique',
+    category: 'Location Intelligence',
+    tag: 'Granted',
+    description: 'Companion patent establishing foundational methods for cluster-based geo-fence boundary computation at scale.',
+    justiaId: '9571968',
+  },
+  {
+    number: 'US 5,261,115',
+    title: 'Multi-Board System with Shift Board Selection',
+    category: 'Hardware Systems',
+    tag: 'Granted',
+    description: 'System architecture enabling dynamic board selection for scalable, high-performance enterprise computing.',
+    justiaId: '5261115',
+  },
+];
+
+const applications = [
+  {
+    number: '20040210541',
+    title: 'User Interface for a Rules Engine and Methods Therefore',
+    category: 'AI / Decision Systems',
+    description: 'Innovative interface design simplifying complex decision-making, enabling business users to leverage AI capabilities without technical expertise.',
+  },
+  {
+    number: '20120259675',
+    title: 'System and Method for a Retail Collaboration Network Platform',
+    category: 'Retail / AI',
+    description: 'AI-driven retail platform optimizing inventory management, customer engagement, and supply chain efficiency.',
+  },
+];
+
+const research = [
+  {
+    title: 'System and Method for Contextual Display of Time and Availability',
+    category: 'Productivity / AI',
+    description: 'AI-based availability management system for intelligent scheduling across distributed teams.',
+  },
+];
+---
+
+<Layout
+  title="Patents — Louis Roehrs"
+  description="Patent portfolio of Louis Roehrs — issued patents in AI, location intelligence, and hardware systems, plus published applications and research."
+  activePage="Patents"
+>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="hero-left">
+      <div class="eyebrow eyebrow-accent">Intellectual Property</div>
+      <h1>Patents &amp; <em>inventions</em></h1>
+      <p class="hero-sub">
+        From real-time machine learning to geo-fence intelligence, Louis's patent portfolio reflects
+        two decades of hands-on innovation — building systems that hadn't been built before.
+      </p>
+      <div class="hero-btns">
+        <a href="https://patents.justia.com/inventor/louis-roehrs" target="_blank" rel="noopener noreferrer" class="btn-accent">
+          View on Justia ↗
+        </a>
+        <a href="#patents" class="btn-ghost">Browse patents</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-label">Issued patents</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">2</div>
+          <div class="hero-stat-label">Applications</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">20+</div>
+          <div class="hero-stat-label">Years innovating</div>
+        </div>
+      </div>
+      <div class="hero-areas">
+        <div class="area-chip">AI / Machine Learning</div>
+        <div class="area-chip">Location Intelligence</div>
+        <div class="area-chip">Retail Technology</div>
+        <div class="area-chip">Hardware Systems</div>
+        <div class="area-chip">Decision Engines</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRANTED PATENTS -->
+  <section id="patents" class="section on-white">
+    <div class="section-header">
+      <div class="eyebrow">Granted</div>
+      <h2 class="section-title">Issued patents</h2>
+      <p class="section-sub">Four patents granted by the USPTO spanning AI learning systems, location intelligence, and hardware architecture.</p>
+    </div>
+    <div class="patents-grid">
+      {patents.map(p => (
+        <a
+          href={`https://patents.justia.com/patent/${p.justiaId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="patent-card"
+        >
+          <div class="patent-card-top">
+            <div>
+              <div class="patent-number">{p.number}</div>
+              <div class="patent-title">{p.title}</div>
+            </div>
+            <span class="tag tag-green">{p.tag}</span>
+          </div>
+          <div class="patent-card-body">
+            <p>{p.description}</p>
+            <div class="patent-meta">
+              <span>{p.category}</span>
+              <span>View on Justia ↗</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section on-surface">
+    <div class="section-header">
+      <div class="eyebrow">Filed</div>
+      <h2 class="section-title">Patent applications</h2>
+      <p class="section-sub">Published applications covering AI-powered rules interfaces and retail collaboration platforms.</p>
+    </div>
+    <div class="patents-grid">
+      {applications.map(a => (
+        <a
+          href={`https://patents.justia.com/patent/${a.number}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="patent-card"
+        >
+          <div class="patent-card-top">
+            <div>
+              <div class="patent-number">App. {a.number}</div>
+              <div class="patent-title">{a.title}</div>
+            </div>
+            <span class="tag tag-amber">Application</span>
+          </div>
+          <div class="patent-card-body">
+            <p>{a.description}</p>
+            <div class="patent-meta">
+              <span>{a.category}</span>
+              <span>View on Justia ↗</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="section on-white">
+    <div class="section-header">
+      <div class="eyebrow">Research</div>
+      <h2 class="section-title">Research papers</h2>
+      <p class="section-sub">Published research exploring AI-driven scheduling and contextual availability systems.</p>
+    </div>
+    <div class="patents-grid single-col">
+      {research.map(r => (
+        <div class="patent-card no-link">
+          <div class="patent-card-top">
+            <div>
+              <div class="patent-title">{r.title}</div>
+            </div>
+            <span class="tag tag-blue">Research</span>
+          </div>
+          <div class="patent-card-body">
+            <p>{r.description}</p>
+            <div class="patent-meta">
+              <span>{r.category}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* HERO */
+  .page-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--navy);
+    padding: 80px 56px 72px;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero-left { color: #E6F1FB; }
+  .hero-left h1 {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    font-weight: 700;
+    color: #F0F6FC;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin: 16px 0 20px;
+  }
+  .hero-left h1 em { font-style: italic; color: var(--navy-mid); }
+  .hero-sub { font-size: 16px; color: var(--navy-mid); line-height: 1.75; margin-bottom: 32px; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-right { display: flex; flex-direction: column; gap: 20px; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .hero-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px; padding: 16px 12px; text-align: center;
+  }
+  .hero-stat-num   { font-size: 26px; font-weight: 500; color: #E6F1FB; }
+  .hero-stat-label { font-size: 11px; color: var(--navy-mid); margin-top: 4px; }
+
+  .hero-areas { display: flex; flex-wrap: wrap; gap: 8px; }
+  .area-chip {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--navy-mid);
+  }
+
+  /* PATENT CARDS */
+  .patents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .patents-grid.single-col { grid-template-columns: 1fr; max-width: 680px; }
+
+  .patent-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .patent-card:not(.no-link):hover { border-color: var(--border-mid); transform: translateY(-2px); }
+  .patent-card.no-link { cursor: default; }
+
+  .patent-card-top {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .patent-number {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .patent-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .patent-card-body { padding: 16px 24px; }
+  .patent-card-body p {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .patent-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: var(--ink-muted);
+    justify-content: space-between;
+  }
+
+  @media (max-width: 900px) {
+    .page-hero    { grid-template-columns: 1fr; padding: 48px 24px; }
+    .patents-grid { grid-template-columns: 1fr; }
+  }
+</style>
